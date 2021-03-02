@@ -1,0 +1,33 @@
+@import "src/assets/style/Colors";
+
+.service-list {
+  box-sizing: border-box;
+  padding: 24px;
+
+  ul {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    width: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      box-sizing: border-box;
+      height: 32px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      color: $black;
+
+      &.service-list-title {
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color: $secondaryWhite;
+      }
+    }
+
+  }
+
+
+}
