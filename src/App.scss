@@ -5,4 +5,11 @@ body {
   font-family: 'Raleway', sans-serif;
   color: $primaryDark;
   background-color: $primaryWhite;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
 }
