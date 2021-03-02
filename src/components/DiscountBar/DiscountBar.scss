@@ -1,0 +1,19 @@
+@import "src/assets/style/Colors";
+
+.discount-bar {
+  background-color: $primaryDark;
+  color: $primaryWhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-size: 14px;
+  line-height: 22px;
+  box-sizing: border-box;
+  padding: 0 17px;
+  font-weight: 700;
+
+  .discount-percentage{
+    color: $primaryGreen;
+  }
+}
