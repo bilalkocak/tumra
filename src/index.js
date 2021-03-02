@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from "react-router-dom";
 
 // Redux imports
 import rootReducer from './store/reducers/rootReducer';
@@ -22,9 +23,11 @@ if (process.env.NODE_ENV === `development`) {
 const store = composeWithDevTools(applyMiddleware(...middlewares))(createStore)(rootReducer);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>,
+    <Router>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </Router>,
     document.getElementById('root')
 );
 
