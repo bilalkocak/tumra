@@ -16,7 +16,7 @@ const ServiceList = () => {
             <ul>
                 <li className='service-list-title'>Servisler</li>
                 {
-                    !service.loading && service.services.map(service=>{
+                    !service?.loading && service?.services.map(service=>{
                         return (
                             <li key={service.serviceId} onClick={() => history.push(`/service/${service.serviceId}`)}>{service.name}</li>
                         )

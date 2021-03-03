@@ -1,9 +1,21 @@
-import {GET_SERVICES_FULFILLED, GET_SERVICES_PENDING, GET_SERVICES_REJECTED} from "../actions/service";
+import {
+    GET_SERVICES_FULFILLED,
+    GET_SERVICES_PENDING,
+    GET_SERVICES_REJECTED,
+    SET_CURRENT_SERVICE_PENDING,
+    SET_CURRENT_SERVICE_FULFILLED,
+    SET_CURRENT_SERVICE_REJECTED
+} from "../actions/service";
 
 const initialState = {
     services: [],
     loading: true,
-    error: false
+    error: false,
+    service: {
+        loading: true,
+        error: true,
+        currentService: {}
+    }
 };
 
 export default (state = initialState, action) => {
@@ -12,20 +24,46 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 services: action.payload,
-                loading: false
+                loading: false,
+                error: false
             };
         case GET_SERVICES_PENDING:
             return {
                 ...state,
-                services: action.payload,
                 loading: true
             };
         case GET_SERVICES_REJECTED:
             return {
                 ...state,
-                services: action.payload,
                 loading: false,
                 error: true
+            };
+        case SET_CURRENT_SERVICE_FULFILLED:
+            console.log(action.payload)
+            return {
+                ...state,
+                service: {
+                    error: false,
+                    currentService: action.payload,
+                    loading: false
+                }
+            };
+        case SET_CURRENT_SERVICE_PENDING:
+            return {
+                ...state,
+                service: {
+                    ...initialState.service,
+                    loading: true
+                }
+            };
+        case SET_CURRENT_SERVICE_REJECTED:
+            return {
+                ...state,
+                service: {
+                    loading: false,
+                    currentService: initialState.service.currentService,
+                    error: true
+                }
             };
         default:
             return state;
