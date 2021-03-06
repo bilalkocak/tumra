@@ -1,0 +1,30 @@
+@import "src/assets/style/Colors";
+
+.question-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 62px;
+  left: 0;
+  width: 100%;
+
+  .question-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: calc(100vw - 32px);
+    border-radius: 3px;
+    background-color: $primaryGreen;
+    box-sizing: border-box;
+    border: none;
+    color: $primaryWhite;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  }
+
+}
