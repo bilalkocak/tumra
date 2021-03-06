@@ -12,5 +12,6 @@
     background-color: $primaryGreen;
     height: 3px;
     border-radius: 0 1.5px 1.5px 0;
+    transition: width 500ms ease;
   }
 }
