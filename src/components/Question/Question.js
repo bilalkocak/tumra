@@ -27,7 +27,10 @@ const Question = ({question, error}) => {
 
 Question.propTypes = {
     question: PropTypes.object.isRequired,
-    error: PropTypes.bool.isRequired
+    error: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.bool
+    ])
 };
 
 export default Question;
