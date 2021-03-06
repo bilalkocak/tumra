@@ -1,10 +1,18 @@
-import {GET_QUESTIONS_PENDING, GET_QUESTIONS_FULFILLED, GET_QUESTIONS_REJECTED} from "../actions/question";
+import {
+    GET_QUESTIONS_PENDING,
+    GET_QUESTIONS_FULFILLED,
+    GET_QUESTIONS_REJECTED,
+    SET_QUESTION_INDEX,
+    RESET_QUESTION_STATE,
+    SAVE_ANSWER
+} from "../actions/question";
 
 const initialState = {
     questions: [],
+    questionIndex: 0,
     loading: true,
     error: false,
-    question: {}
+    formData: []
 };
 
 export default (state = initialState, action) => {
@@ -25,6 +33,24 @@ export default (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: true
+            };
+        case SET_QUESTION_INDEX:
+            return {
+                ...state,
+                questionIndex: state.questionIndex + action.payload
+            };
+        case RESET_QUESTION_STATE:
+            return {
+                ...initialState
+            };
+        case SAVE_ANSWER:
+            console.log(action.payload,state.questionIndex)
+            let _formData = [...state.formData];
+            _formData[state.questionIndex] = action.payload;
+
+            return {
+                ...state,
+                formData: [..._formData]
             };
         default:
             return state;
