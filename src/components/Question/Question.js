@@ -29,7 +29,7 @@ Question.propTypes = {
     question: PropTypes.object.isRequired,
     error: PropTypes.oneOfType([
         PropTypes.bool,
-        PropTypes.bool
+        PropTypes.string
     ])
 };
 
