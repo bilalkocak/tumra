@@ -1,4 +1,4 @@
-import {getQuestions} from "./question";
+import {getQuestions, resetQuestionState} from "./question";
 
 export const GET_SERVICES = "GET_SERVICES";
 export const GET_SERVICES_PENDING = `${GET_SERVICES}_PENDING`;
@@ -23,7 +23,10 @@ export function getServices() {
     return dispatch => {
         dispatch({
             type: GET_SERVICES,
-            payload: _promise.then(data => data)
+            payload: _promise.then(data => {
+                dispatch(resetQuestionState())
+                return data
+            })
         })
     }
 
@@ -43,7 +46,7 @@ export function setCurrentService(id) {
         dispatch({
             type: SET_CURRENT_SERVICE,
             payload: _promise.then(_data => {
-                getQuestions(id)
+                dispatch(getQuestions(id))
                 return _data.find(item => item.serviceId === parseInt(id))
             })
         })
