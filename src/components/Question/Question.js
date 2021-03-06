@@ -5,7 +5,7 @@ import './Question.scss'
 import TextArea from "./TextArea/TextArea";
 import Radio from "./Radio/Radio";
 
-const Question = ({question}) => {
+const Question = ({question, error}) => {
 
 
     return (
@@ -17,6 +17,7 @@ const Question = ({question}) => {
                     ) :
                     <TextArea/>
                 }
+                {error && <div className={'error-message'}>{error}</div>}
                 <QuestionButton/>
             </div>
         </div>
@@ -25,7 +26,8 @@ const Question = ({question}) => {
 
 
 Question.propTypes = {
-    question: PropTypes.object.isRequired
+    question: PropTypes.object.isRequired,
+    error: PropTypes.bool.isRequired
 };
 
 export default Question;

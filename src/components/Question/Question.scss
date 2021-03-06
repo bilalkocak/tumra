@@ -18,6 +18,13 @@
 
   .question-content {
     width: 100%;
+
+    .error-message {
+      color: $error;
+      font-size: 10px;
+      line-height: 15px;
+      text-align: left;
+    }
   }
 
 }

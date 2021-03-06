@@ -1,6 +1,6 @@
 import React from 'react';
 import './QuestionButton.scss';
-import {setQuestionIndex} from "../../../store/actions/question";
+import {setQuestionIndex, showError} from "../../../store/actions/question";
 import {useDispatch, useSelector} from "react-redux";
 
 const QuestionButton = () => {
@@ -9,9 +9,13 @@ const QuestionButton = () => {
     const onClickButton = () => {
         const {questions, questionIndex, formData} = question;
 
+
         if (!questions[questionIndex].required || formData[questionIndex]) {
+            dispatch(showError(''))
             !isLast() &&
             dispatch(setQuestionIndex(1))
+        } else {
+            dispatch(showError('Bu alan zorunlu'))
         }
     }
     const isLast = () => {

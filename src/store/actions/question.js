@@ -6,6 +6,7 @@ export const GET_QUESTIONS_REJECTED = `${GET_QUESTIONS}_REJECTED`;
 export const SET_QUESTION_INDEX = "SET_QUESTION_INDEX";
 export const RESET_QUESTION_STATE = "RESET_QUESTION_STATE";
 export const SAVE_ANSWER = "SAVE_ANSWER";
+export const SHOW_ERROR = "SHOW_ERROR";
 
 export function getQuestions(id) {
 
@@ -50,6 +51,15 @@ export function saveAnswer(answer) {
         dispatch({
             type: SAVE_ANSWER,
             payload: answer
+        })
+    }
+}
+
+export function showError(message) {
+    return dispatch => {
+        dispatch({
+            type: SHOW_ERROR,
+            payload: message
         })
     }
 }

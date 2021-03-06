@@ -27,7 +27,7 @@ const Header = () => {
                     <div className="header-title-container">
                         {service.service.currentService.name}
                     </div>
-                    <div className="header-cancel-button">
+                    <div className="header-cancel-button" onClick={() => history.push('/')}>
                         <img src={cancelButton}/>
                     </div>
                 </div>

@@ -4,7 +4,8 @@ import {
     GET_QUESTIONS_REJECTED,
     SET_QUESTION_INDEX,
     RESET_QUESTION_STATE,
-    SAVE_ANSWER
+    SAVE_ANSWER,
+    SHOW_ERROR
 } from "../actions/question";
 
 const initialState = {
@@ -50,6 +51,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 formData: [..._formData]
+            };
+        case SHOW_ERROR:
+            return {
+                ...state,
+                error: action.payload
             };
         default:
             return state;

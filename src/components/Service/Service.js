@@ -18,7 +18,7 @@ const Service = () => {
         <section>
             {
                 question.loading ? <MoonLoader color={primaryGreen} loading={true} css={{marginTop: 200}} size={150}/> :
-                    <Question question={question?.questions[question?.questionIndex]}/>
+                    <Question question={question?.questions[question?.questionIndex]} error={question.error}/>
             }
         </section>
     );
