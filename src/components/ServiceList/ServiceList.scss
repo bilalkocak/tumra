@@ -1,6 +1,9 @@
 @import "src/assets/style/Colors";
 
 .service-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 24px;
 

@@ -15,3 +15,6 @@ export const ROUTES = [
         component: Service
     },
 ];
+
+export const primaryGreen= '#2CB34F';
+
