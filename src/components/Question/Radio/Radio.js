@@ -12,7 +12,7 @@ const Radio = ({values}) => {
 
     useEffect(() => {
         setHasImage(Boolean(values[0].valueImageUrl))
-    }, [])
+    }, [values])
 
     const onChangeValue = (e) => {
         const {value} = e.target
