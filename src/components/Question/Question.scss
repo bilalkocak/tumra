@@ -1,0 +1,22 @@
+@import "src/assets/style/Colors";
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 24px 62px 24px;
+
+  h1 {
+    color: $primaryDark;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  .question-content {
+    width: 100%;
+  }
+
+}
