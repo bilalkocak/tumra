@@ -1,0 +1,64 @@
+@import "src/assets/style/Colors";
+
+.radio-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .radio {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondaryWhite;
+    margin-bottom: 8px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    line-height: 18px;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    &.radio-image {
+      width: 156px;
+
+      img {
+        padding: 14px 0;
+        width: 96px;
+        height: 96px;
+      }
+
+    }
+
+
+    div {
+      display: flex;
+      align-items: center;
+      height: 45px;
+      width: 100%;
+
+      .custom-radio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primaryGray;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-right: 8px;
+        margin-left: 8px;
+
+        &-checked {
+          background-color: $primaryGreen;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+}
