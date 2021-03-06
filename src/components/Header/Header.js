@@ -32,7 +32,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="percent-bar"
-                     style={{width: `${100 * (question.questionIndex) / question.questions.length}%`}}/>
+                     style={{width: `${100 * (question.questionIndex + 1) / question.questions.length}%`}}/>
             </header>
         );
     }
