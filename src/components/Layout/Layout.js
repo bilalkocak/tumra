@@ -17,7 +17,7 @@ const Layout = () => {
                     &&
                     <>
                         <Header/>
-                        <PriceBar/>
+                        {!loading && <PriceBar/>}
                         {
                             !loading && currentService.discountRateText &&
                             <DiscountBar text={currentService.discountRateText}/>
