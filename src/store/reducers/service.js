@@ -39,7 +39,6 @@ export default (state = initialState, action) => {
                 error: true
             };
         case SET_CURRENT_SERVICE_FULFILLED:
-            console.log(action.payload)
             return {
                 ...state,
                 service: {

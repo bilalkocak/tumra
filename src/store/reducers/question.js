@@ -44,7 +44,6 @@ export default (state = initialState, action) => {
                 ...initialState
             };
         case SAVE_ANSWER:
-            console.log(action.payload,state.questionIndex)
             let _formData = [...state.formData];
             _formData[state.questionIndex] = action.payload;
 
