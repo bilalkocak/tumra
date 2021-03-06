@@ -1,0 +1,21 @@
+.result-container {
+  position: relative;
+
+  .message-container {
+    position: absolute;
+    top: 90px;
+    left: 16px;
+
+    .emoji {
+      font-size: 45px;
+    }
+
+    .message {
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 24px;
+    }
+  }
+
+
+}
